@@ -1,8 +1,15 @@
+@font-face {
+    font-family:"geins";
+    src: url("/geins/Geist-Regular.ttf") format("truetype");
+}
 *{
     margin:0;
     padding:0;
     box-sizing: border-box;
+    font-family:geins;
+    
 }
+
 body{
     width:100%;
     height: 100vh;
@@ -78,6 +85,74 @@ main{
     background-color:#fff;
     color:#333;
 }
+.modal{
+    z-index:10;
+    width:100%;
+    height:100%;
+    position:fixed;
+    background: rgba(15, 15, 15, 0.32);
+    backdrop-filter: blur(3.5px);
+}
+.modal-menu{
+    width:50%;
+    height:100%;
+    background: rgb(255, 246, 233);
+    position:absolute;
+    top:0;
+    right:0;
+    display:flex;
+    flex-direction:column;
+    animation:1.4s slideMenu 1;
+    padding:20px;
+}
+nav{
+    padding-top:20px;
+}
+nav ul li{
+    list-style:none;
+    padding:10px 0px;
+    border-bottom:1px solid rgb(249, 144, 69);
+    display:flex;
+    align-items:center;
+}
+.clickArrow{
+    transform:rotate(180deg);
+    transition:all 0.5s linear;
+}
+.clickArrowOut{
+    transform:rotate(0deg);
+    transition:all 0.5s linear;
+}
+.arrow:hover{
+    cursor:pointer;
+}
+nav ul li:hover{
+    background:rgb(250, 200, 158);
+    transition:0.6s;
+}
+.liga{
+    text-decoration:none;
+    color:black;
+    padding:8px;
+}
+
+.close:hover{
+    cursor:pointer;
+}
+.container{
+    width:100%;
+    height:300px;
+    background: rgb(255, 246, 233);
+}
+.disabled{
+    display:none;
+}
+
+@keyframes slideMenu{
+    0%{
+        transform:translateX(100%);
+    }
+}
 @keyframes banner{
     0%{
         background-image:url('/img/01.jpg');
@@ -104,33 +179,6 @@ main{
         background-image:url('/img/04.jpg');
     }
 }
-.modal{
-    z-index:20;
-    width:100%;
-    height:100%;
-    position:fixed;
-    background: rgba(15, 15, 15, 0.32);
-    backdrop-filter: blur(3.5px);
-}
-.modal-menu{
-    width:50%;
-    height:100%;
-    background: rgb(253, 241, 228);
-    position:absolute;
-    top:0;
-    right:0;
-}
-
-.close:hover{
-    cursor:pointer;
-}
-.container{
-    width:100%;
-    height:300px;
-    background:hsl(30, 36.40%, 87.10%);
-}
-
-
 @media (max-width:600px){
     .modal-menu{
         width:100%;
